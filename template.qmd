@@ -1,13 +1,14 @@
 ---
-title: "Your awesome project title"
+title: "Resbaz 2025 - Authoring Collaborative Research Projects In Quarto"
 author:
-  name: "You et al"
-  affiliation: "From whence you hail"
+  name: "Nick Young"
+  affiliation: "University of Auckland"
 date: today
 bibliography: refs.bib
 from: markdown+emoji
 format:
   html:
+    toc: true
     code-fold: false
     link-external-newwindow: true
 theme:
@@ -31,6 +32,21 @@ theme:
 :::
 
 # Introduction
+
+## This is a sub-heading
+
+- a list?
+- what
+- I dunno
+
+$e=mc^2$
+
+$$
+SD = \sqrt{\frac{\sum_{i=1}^{n}{(x_i - \bar{x})^2}}{n-1}}
+$$
+
+@chamberlin1897
+@perkel2022
 
 :::{.callout-tip}
 # Markdown exercise
@@ -81,6 +97,11 @@ if (!require("pacman")) install.packages("pacman", repos="http://cran.r-project.
 pacman::p_load(ggplot2, palmerpenguins)    # Install & load packages
 ```
 
+```{r}
+data(penguins)
+head(penguins)
+```
+
 # Tabsets
 
 :::{.callout-tip}
@@ -93,6 +114,37 @@ pacman::p_load(ggplot2, palmerpenguins)    # Install & load packages
   - Does not matter what they contain but feel free to blurb something in there
 
 - render the document and hit the :heavy_check_mark: in zoom
+:::
+
+:::{.panel-tabset}
+
+# Code
+
+```{r}
+#| eval: false
+data(penguins)
+head(penguins)
+```
+
+# Data
+
+```{r}
+#| echo: false
+data(penguins)
+head(penguins)
+```
+
+# Plot
+
+```{r}
+#| echo: false
+plot(penguins)
+```
+
+# xkcd
+
+![fix](images/fixing_problems.png)
+
 :::
 
 # Images
